@@ -1,8 +1,8 @@
 console.log("Welcome to TicTacToe!");
 
-let bgmusic = new Audio("8bit.mp3");
-let audioTurn = new Audio("click.mp3");
-let over = new Audio("game-over.mp3");
+let bgmusic = new Audio("assets/8bit.mp3");
+let audioTurn = new Audio("assets/click.mp3");
+let over = new Audio("assets/game-over.mp3");
 
 let turn = "X";
 let isgameover = false;
@@ -30,7 +30,10 @@ const startMusic = () => {
     gameContainer.style.filter = "blur(0)";
     
     startScreen.style.animation = "swipeUp 0.7s ease-in-out forwards";
-};
+    startScreen.addEventListener("animationend", () => {
+        startScreen.style.display = "none";
+    });
+    };
 
 
 document.getElementById("startScreen").addEventListener("click", startMusic);
